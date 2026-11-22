@@ -3,24 +3,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apps</title>
+  <title>RJS Inc · Android Apps</title>
+  <meta name="description" content="Android apps by RJS Inc: Chain Sort, a marble sorting puzzle game, and Plateful, a calorie and macro tracker.">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 16px; color: #222; background: #fff; line-height: 1.6; }
-    h1 { margin-bottom: 4px; }
-    .app { border: 1px solid #e3e3e3; border-radius: 10px; padding: 16px; margin: 16px 0; }
-    .app h2 { margin: 0 0 4px; font-size: 1.15rem; }
-    footer { margin-top: 40px; font-size: .9rem; color: #666; }
+    :root{
+      --bg:#f5f6f8; --card:#ffffff; --fg:#1a1f2b; --muted:#5d6475; --line:#e2e5ec;
+      --cs:#3150d6; --pf:#1e7a55; --btn:#1a1f2b; --btnfg:#ffffff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#11141b; --card:#1a1f2a; --fg:#eef0f5; --muted:#a2a9ba; --line:#2a3040;
+             --cs:#8098ff; --pf:#5cc79a; --btn:#eef0f5; --btnfg:#11141b; }
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    .wrap{max-width:960px;margin:0 auto;padding:48px 16px 64px}
+    header h1{font-size:2rem;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+    header p{margin:0;color:var(--muted);max-width:56ch}
+    .app{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:28px}
+    .top{display:flex;gap:16px;align-items:center}
+    .top img{width:72px;height:72px;border-radius:18px;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+    .top h2{margin:0;font-size:1.35rem;line-height:1.2}
+    .tag{display:inline-block;margin-top:4px;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+    .app.cs{--accent:var(--cs)} .app.pf{--accent:var(--pf)}
+    .desc{margin:16px 0 0;max-width:62ch}
+    ul.feat{margin:12px 0 0;padding-left:20px;color:var(--fg)}
+    ul.feat li{margin:3px 0}
+    .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;max-width:620px}
+    .shots img{width:100%;height:auto;aspect-ratio:300/533;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);display:block}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn);color:var(--btnfg);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:12px}
+    .btn svg{width:18px;height:18px}
+    .soon{display:inline-block;padding:10px 16px;border-radius:12px;border:2px dashed var(--line);color:var(--muted);font-weight:700}
+    .links a.plain{color:var(--accent);font-weight:600}
+    footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+    footer a{color:inherit}
+    @media (max-width:520px){ .shots{gap:8px} .app{padding:18px} }
   </style>
 </head>
 <body>
-  <h1>Our Apps</h1>
-  <p>Mobile apps for Android.</p>
+  <div class="wrap">
+    <header>
+      <h1>RJS Inc</h1>
+      <p>Simple, offline-friendly Android apps made in the Philippines.</p>
+    </header>
 
-  <div class="app">
-    <h2>Chain Sort</h2>
-    <p>A relaxing color-sorting puzzle game.</p>
+    <section class="app cs" id="chain-sort">
+      <div class="top">
+        <img src="chainsort-icon.png" alt="Chain Sort app icon" width="72" height="72">
+        <div>
+          <h2>Chain Sort: Marble Puzzle</h2>
+          <span class="tag">Puzzle game · Free on Google Play</span>
+        </div>
+      </div>
+      <p class="desc">A relaxing ball sort puzzle with a twist. Pour colored marbles between tubes until every tube holds one color, with endless levels and a new obstacle every 20 levels.</p>
+      <ul class="feat">
+        <li>Ghost marbles show where your marbles will land before you pour</li>
+        <li>Mystery marbles, locked tubes, chained tubes and move-limit challenges</li>
+        <li>Daily puzzle with streaks, hints that stay on screen, and marble skins</li>
+        <li>Guided walkthrough for new players, dark mode, plays offline</li>
+      </ul>
+      <div class="shots">
+        <img src="chainsort-1.jpg" alt="Chain Sort level with the landing preview" loading="lazy" width="300" height="533">
+        <img src="chainsort-2.jpg" alt="Chain Sort level with chained, mystery and locked tubes" loading="lazy" width="300" height="533">
+        <img src="chainsort-3.jpg" alt="Chain Sort hint arrow showing the next move" loading="lazy" width="300" height="533">
+      </div>
+      <div class="links">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.tero.chainsort" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.6.9 1.1.6l15.8-9.2c.5-.3.5-1 0-1.3L5.1 2.2C4.6 1.9 4 2.2 4 2.8z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="plain" href="https://chainsort.netlify.app/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </section>
+
+    <section class="app pf" id="plateful">
+      <div class="top">
+        <img src="plateful-icon.png" alt="Plateful app icon" width="72" height="72">
+        <div>
+          <h2>Plateful: Calorie Tracker</h2>
+          <span class="tag">Health &amp; fitness · Coming soon</span>
+        </div>
+      </div>
+      <p class="desc">Track calories and macros in seconds. Snap a photo of your meal, scan a barcode or a nutrition label, or just describe what you ate, and Plateful estimates the calories, protein, carbs and fat.</p>
+      <ul class="feat">
+        <li>Photo, barcode, label and text logging, including Filipino dishes</li>
+        <li>Daily calorie and macro targets with a clear "what's left" view</li>
+        <li>Weekly progress, water and weight tracking</li>
+        <li>Food ideas that fit the calories and protein you still need</li>
+      </ul>
+      <div class="shots">
+        <img src="plateful-1.jpg" alt="Plateful Today screen with calories and macros left" loading="lazy" width="300" height="533">
+        <img src="plateful-2.jpg" alt="Plateful logging a meal from a description" loading="lazy" width="300" height="533">
+        <img src="plateful-3.jpg" alt="Plateful weekly progress summary" loading="lazy" width="300" height="533">
+      </div>
+      <div class="links">
+        <span class="soon">In testing · coming to Google Play</span>
+        <a class="plain" href="https://plateful-api.plateful-api.workers.dev/privacy" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Contact: use the support email listed on each app's Google Play page.</p>
+      <p>© 2026 RJS Inc · <a href="app-ads.txt">app-ads.txt</a></p>
+    </footer>
   </div>
-
-  <footer>Contact: use the support email listed on our Google Play page.</footer>
 </body>
 </html>
